@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative min-h-screen w-full font-general">
+    <div class="relative w-full min-h-screen font-general">
         <Navigation />
 
         <div class="absolute z-0">
@@ -65,7 +65,7 @@ onMounted(() => {
         </div>
 
         <div class="fixed inset-0 z-[999] transition-transform duration-1000 ease-in-out"
-            :class="isCoverClosed ? '-translate-y-full' : 'translate-y-0'">
+            :class="isCoverClosed ? '-translate-y-full bg-transparent' : 'translate-y-0'">
             <div>
                 <Cover
                     :to="props.to"
