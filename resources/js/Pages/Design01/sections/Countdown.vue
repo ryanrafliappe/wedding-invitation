@@ -49,28 +49,28 @@ onUnmounted(() => clearInterval(interval))
 </script>
 
 <template>
-    <div class="relative h-screen w-screen">
-        <img :src="'/storage/images/countdown.webp'" alt="countdown" class="absolute inset-0 w-full h-full object-cover object-top block z-0" />
+    <div class="relative w-screen h-screen">
+        <img :src="'/storage/images/countdown.jpg'" alt="countdown" class="absolute inset-0 z-0 block object-cover object-top w-full h-full" />
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-        <div class="relative z-20 w-full h-full flex flex-col justify-end items-center text-white pb-32">
-            <h2 class="text-xl mb-4">Menuju hari bahagia</h2>
-            <div class="flex gap-6 text-center text-xl font-semibold">
+        <div class="relative z-20 flex flex-col items-center justify-end w-full h-full pb-32 text-white">
+            <h2 class="mb-4 text-xl">Menuju hari bahagia</h2>
+            <div class="flex gap-6 text-xl font-semibold text-center">
                 <div>
-                    <p class=" text-4xl font-main">{{ days }}</p>
+                    <p class="text-4xl  font-main">{{ days }}</p>
                     <p class="text-sm font-thin">Hari</p>
                 </div>
                 <div>
-                    <p class=" text-4xl font-main">{{ hours }}</p>
+                    <p class="text-4xl  font-main">{{ hours }}</p>
                     <p class="text-sm font-thin">Jam</p>
                 </div>
                 <div>
-                    <p class=" text-4xl font-main">{{ minutes }}</p>
+                    <p class="text-4xl  font-main">{{ minutes }}</p>
                     <p class="text-sm font-thin">Menit</p>
                 </div>
                 <div>
-                    <p class=" text-4xl font-main">{{ seconds }}</p>
+                    <p class="text-4xl  font-main">{{ seconds }}</p>
                     <p class="text-sm font-thin">Detik</p>
                 </div>
             </div>
