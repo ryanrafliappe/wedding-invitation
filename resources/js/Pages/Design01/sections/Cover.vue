@@ -44,12 +44,12 @@ function formatIndoDate(dateString) {
         <div class="absolute top-0 bottom-0 left-0 right-0 px-8 py-8 bg-black opacity-60"></div>
         <div class="absolute top-0 flex flex-col items-center justify-center w-full px-8 pt-8 text-white">
             <p class="text-gray-200 ">Kepada</p>
-            <div class="px-8 py-2  border-y">
+            <div class="px-8 py-2 border-y">
                 <p class="text-2xl text-center">{{ props.to }}</p>
                 <p class="text-center">di- Tempat</p>
             </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 px-8 py-4">
+        <div class="absolute bottom-0 left-0 right-0 px-8 py-4 pb-12">
             <div class="text-white">
                 <p class="mb-4"><span class="px-4 py-2 text-sm italic border border-white rounded-3xl">The wedding of</span></p>
                 <h1 class="text-7xl font-main">{{ data.groom_nickname }}</h1>
