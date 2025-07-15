@@ -49,7 +49,7 @@ onUnmounted(() => clearInterval(interval))
 </script>
 
 <template>
-    <div class="relative w-screen h-screen">
+    <div class="relative w-screen h-dvh">
         <img :src="'/storage/images/countdown.jpg'" alt="countdown" class="absolute inset-0 z-0 block object-cover object-top w-full h-full" />
 
         <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
@@ -58,19 +58,19 @@ onUnmounted(() => clearInterval(interval))
             <h2 class="mb-4 text-xl">Menuju hari bahagia</h2>
             <div class="flex gap-6 text-xl font-semibold text-center">
                 <div>
-                    <p class="text-4xl  font-main">{{ days }}</p>
+                    <p class="text-4xl font-main">{{ days }}</p>
                     <p class="text-sm font-thin">Hari</p>
                 </div>
                 <div>
-                    <p class="text-4xl  font-main">{{ hours }}</p>
+                    <p class="text-4xl font-main">{{ hours }}</p>
                     <p class="text-sm font-thin">Jam</p>
                 </div>
                 <div>
-                    <p class="text-4xl  font-main">{{ minutes }}</p>
+                    <p class="text-4xl font-main">{{ minutes }}</p>
                     <p class="text-sm font-thin">Menit</p>
                 </div>
                 <div>
-                    <p class="text-4xl  font-main">{{ seconds }}</p>
+                    <p class="text-4xl font-main">{{ seconds }}</p>
                     <p class="text-sm font-thin">Detik</p>
                 </div>
             </div>

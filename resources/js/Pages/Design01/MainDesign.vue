@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative w-full min-h-screen font-general">
+    <div class="relative w-full min-h-dvh font-general">
         <Navigation />
 
         <div class="absolute z-0">

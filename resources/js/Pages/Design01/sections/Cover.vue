@@ -39,8 +39,8 @@ function formatIndoDate(dateString) {
 </script>
 
 <template>
-    <div class="relative w-full min-h-screen">
-        <img :src="'/storage/images/cover.jpeg'" alt="wedding invitation" class="block object-cover object-top h-screen" />
+    <div class="relative w-full min-h-dvh">
+        <img :src="'/storage/images/cover.jpeg'" alt="wedding invitation" class="block object-cover object-top h-dvh" />
         <div class="absolute top-0 bottom-0 left-0 right-0 px-8 py-8 bg-black opacity-60"></div>
         <div class="absolute top-0 flex flex-col items-center justify-center w-full px-8 pt-8 text-white">
             <p class="text-gray-200 ">Kepada</p>
