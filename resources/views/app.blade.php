@@ -7,7 +7,7 @@
 
         <meta property="og:title" content="Fadli & Rika - Undangan Pernikahan" />
         <meta property="og:description" content="Kami mengundang Anda untuk menghadiri hari bahagia kami." />
-        <meta property="og:image" content="https://fadli-dan-rika.uliyan.my.id/storage/images/share`-thumbnail.jpg" />
+        <meta property="og:image" content="https://fadli-dan-rika.uliyan.my.id/storage/images/share-thumbnail.png" />
         <meta property="og:url" content="https://fadli-dan-rika.uliyan.my.id/" />
         <meta property="og:type" content="website" />
 
