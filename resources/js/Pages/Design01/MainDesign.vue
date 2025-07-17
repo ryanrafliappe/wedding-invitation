@@ -35,41 +35,51 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative w-full min-h-dvh font-general">
-        <Navigation />
-
-        <div class="absolute z-0">
-            <section id="countdown">
-                <Countdown />
-            </section>
-
-            <section id="couple">
-                <TheCouple />
-            </section>
-
-            <section id="date">
-                <TheDate />
-            </section>
-            
-            <section id="story">
-                <LoveStory />
-            </section>
-
-            <section id="messages">
-                <Messages />
-            </section>
-
-            <section id="thanks">
-                <Thanks />
-            </section>
+    <div class="flex min-h-dvh bg-emerald-800">
+        <div class="fixed top-0 left-0 hidden w-2/3 h-full md:block bg-emerald-800">
+            <!-- Sticky wrapper -->
+             <div class="flex flex-col items-center justify-center w-full h-full text-white">
+                <h1 class="text-5xl font-main">Rika</h1>
+                <h1 class="mb-4 text-5xl font-main">Fadli</h1>
+             </div>
         </div>
-
-        <div class="fixed inset-0 z-[999] transition-transform duration-1000 ease-in-out"
-            :class="isCoverClosed ? '-translate-y-full bg-transparent' : 'translate-y-0'">
-            <div>
-                <Cover
-                    :to="props.to"
-                    @open-invitation="isCoverClosed = true" />
+        <div class="relative w-full ml-auto bg-emerald-800 md:w-1/3 min-h-dvh">
+        <!-- <div class="relative w-full bg-white min-h-dvh md:max-w-md font-general"> -->
+            <Navigation />
+    
+            <div class="absolute z-0 w-full">
+                <section id="countdown">
+                    <Countdown />
+                </section>
+    
+                <section id="couple">
+                    <TheCouple />
+                </section>
+    
+                <section id="date">
+                    <TheDate />
+                </section>
+                
+                <section id="story">
+                    <LoveStory />
+                </section>
+    
+                <section id="messages">
+                    <Messages />
+                </section>
+    
+                <section id="thanks">
+                    <Thanks />
+                </section>
+            </div>
+    
+            <div class="fixed inset-0 z-[999] transition-transform duration-1000 ease-in-out"
+                :class="isCoverClosed ? '-translate-y-full' : 'translate-y-0'">
+                <div>
+                    <Cover
+                        :to="props.to"
+                        @open-invitation="isCoverClosed = true" />
+                </div>
             </div>
         </div>
     </div>

@@ -46,9 +46,9 @@ onUnmounted(() => {
 
 <template>
     <div
-        class="flex justify-center items-center w-full">
+        class="flex items-center justify-center w-full">
         <div
-            class="fixed bottom-6 z-50">
+            class="fixed z-50 bottom-6">
             <button
                 @click="handleClick"
                 :class="{
@@ -77,9 +77,9 @@ onUnmounted(() => {
             </button>
         </div>
         <div
-            class="fixed bottom-8 z-30">
+            class="fixed z-30 bottom-8">
             <div
-                class="w-72 h-11 bg-white rounded-full shadow-lg flex justify-center items-center">
+                class="flex items-center justify-center bg-white rounded-full shadow-lg w-72 h-11">
                 <button
                     :class="{
                         'w-1/5 flex justify-center items-center': true,

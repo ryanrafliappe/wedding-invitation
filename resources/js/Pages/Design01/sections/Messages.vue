@@ -64,20 +64,20 @@ const submitForm = async () => {
 </script>
 
 <template>
-    <div class="mb-6 mt-12 mx-8 h-screen">
+    <div class="h-screen mx-8 mt-12 mb-6">
         <h1 data-aos="fade-up" data-aos-duration="500" class="text-3xl font-main text-end text-emerald-600">Pesan</h1>
 
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="form" class=" flex flex-col">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="form" class="flex flex-col ">
             <input
                 type="text"
                 v-model="name"
-                class="w-full h-12 mt-6 bg-gray-50 p-2 border border-gray-200 active:border-emerald-900 focus:border-emerald-900 rounded-lg"
-                placeholder="Masukkan nama kamu.." >
+                class="w-full h-12 p-2 mt-6 border border-gray-200 rounded-lg bg-gray-50 active:border-emerald-900 focus:border-emerald-900"
+                placeholder="Masukkan nama Anda.." >
             <textarea
                 v-model="message"
-                class="w-full h-32 bg-gray-50 p-2 border border-gray-200 mt-2 active:border-emerald-900 focus:border-emerald-900 rounded-lg"
+                class="w-full h-32 p-2 mt-2 border border-gray-200 rounded-lg bg-gray-50 active:border-emerald-900 focus:border-emerald-900"
                 id=""
-                placeholder="masukkan pesan kamu di sini.."></textarea>
+                placeholder="masukkan pesan Anda di sini.."></textarea>
 
             <p v-if="feedbackMessage" :class="{'text-red-600': !feedbackSuccess, 'text-emerald-600': feedbackSuccess, 'text-sm italic text-end': true}" class="mt-2">
                 {{ feedbackMessage }}
@@ -86,20 +86,20 @@ const submitForm = async () => {
             <button
                 @click="submitForm"
                 :disabled="submitting"
-                class="mt-4 bg-emerald-900 text-white px-4 py-2 text-sm rounded-full hover:bg-emerald-700">
+                class="px-4 py-2 mt-4 text-sm text-white rounded-full bg-emerald-900 hover:bg-emerald-700">
                 {{ submitting ? 'Mengirim...' : 'Kirim Pesan' }}
             </button>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="messages" class=" h-96 mt-8 bg-gray-50 rounded-lg overflow-y-scroll">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="messages" class="mt-8 overflow-y-scroll rounded-lg  h-96 bg-gray-50">
             <div v-if="localMessages.length > 0">
                 <div v-for="(message, index) in localMessages" :key="index" class="p-4 mb-4 border-b border-gray-200">
                     <p class="text-sm text-gray-600">{{ message.sender }}</p>
-                    <p class="text-gray-800 text-lg">{{ message.message }}</p>
+                    <p class="text-lg text-gray-800">{{ message.message }}</p>
                 </div>
             </div>
             <div v-else class="flex items-center justify-center h-full">
-                <p class="text-center text-gray-500 italic">Belum ada pesan yang tersedia.</p>
+                <p class="italic text-center text-gray-500">Belum ada pesan yang tersedia.</p>
             </div>
         </div>
     </div>

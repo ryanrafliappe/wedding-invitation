@@ -134,7 +134,7 @@ function getIndoYear(dateString) {
         <div
             data-aos="zoom-in"
             data-aos-duration="500"
-            class="relative w-full overflow-hidden rounded-lg shadow-lg">
+            class="relative w-full mb-6 overflow-hidden rounded-lg shadow-lg">
             <div class="absolute inset-0 bg-top bg-cover" style="background-image: url('/storage/images/resepsi-bg.jpg');"></div>
             <div class="absolute inset-0 bg-black-overlay"></div>
             <div class="absolute inset-0 z-30 flex justify-center mt-4">
@@ -159,6 +159,44 @@ function getIndoYear(dateString) {
                     <iframe
                         v-if="data.reception_coordinate"
                         :src="`https://www.google.com/maps?q=${data.reception_coordinate}&hl=id&z=15&output=embed`"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full pb-6 aspect-square">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            class="relative w-full overflow-hidden rounded-lg shadow-lg">
+            <div class="absolute inset-0 bg-top bg-cover" style="background-image: url('/storage/images/resepsi-bg.jpg');"></div>
+            <div class="absolute inset-0 bg-black-overlay"></div>
+            <div class="absolute inset-0 z-30 flex justify-center mt-4">
+                <p class="text-3xl text-white font-main">Ngunduh Mantu</p>
+            </div>
+            <div class="relative z-30 pt-4 mt-16 bg-white rounded-t-4xl rounded-b-2xl">
+                <div class="flex items-center justify-center w-full px-4">
+                    <div class="w-1/2 pb-4 pr-5 border-r text-end border-emerald-500">
+                        <p>{{ getIndoDay(data.post_reception_date) }}</p>
+                        <p class="pb-2 text-5xl font-bold font-main">{{ getIndoDate(data.post_reception_date) }}</p>
+                        <p>{{ getIndoMonth(data.post_reception_date) }} {{ getIndoYear(data.post_reception_date) }}</p>
+                    </div>
+                    <div class="flex flex-col items-start justify-center w-1/2 h-full pl-5">
+                        <p class="text-2xl font-semibold font-main">{{ data.post_reception_time_start }} - {{ data.post_reception_time_end || 'Selesai' }}</p>
+                        <p><span class="text-xs">WITA</span></p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="pt-8 text-center">Lokasi Acara</p>
+                    <p class="px-4 mb-2 text-lg font-semibold text-center">{{ data.post_reception_location }}</p>
+                    <iframe
+                        v-if="data.post_reception_coordinate"
+                        :src="`https://www.google.com/maps?q=${data.post_reception_coordinate}&hl=id&z=15&output=embed`"
                         style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
