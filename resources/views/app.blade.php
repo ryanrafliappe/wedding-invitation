@@ -5,7 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Pernikahanku</title>
+        <meta property="og:title" content="Fadli & Rika - Undangan Pernikahan" />
+        <meta property="og:description" content="Kami mengundang Anda untuk menghadiri hari bahagia kami." />
+        <meta property="og:image" content="https://fadli-dan-rika.uliyan.my.id/storage/images/share`-thumbnail.jpg" />
+        <meta property="og:url" content="https://fadli-dan-rika.uliyan.my.id/" />
+        <meta property="og:type" content="website" />
+
+        <title>Rika & Fadli</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
