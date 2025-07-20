@@ -50,7 +50,7 @@ onUnmounted(() => clearInterval(interval))
 
 <template>
     <div class="relative w-full h-dvh">
-        <img :src="'/storage/images/countdown.jpg'" alt="countdown" class="absolute inset-0 z-0 block object-cover object-top w-full h-full" />
+        <img :src="'/storage/images/countdown.jpeg'" alt="countdown" class="absolute inset-0 z-0 block object-cover object-top w-full h-full" />
 
         <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 

@@ -8,7 +8,7 @@ const data = dataStore.data
 <template>
     <div class="relative flex items-center justify-center w-full min-h-screen">
         
-        <img :src="'/storage/images/thanks.jpg'" alt="thanks image" class="absolute object-cover w-full h-full">
+        <img :src="'/storage/images/thanks.jpeg'" alt="thanks image" class="absolute object-cover w-full h-full">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="absolute px-8 mt-30">
             <p data-aos="zoom-in" data-aos-duration="500" class="text-4xl text-center text-white font-main">Terima Kasih</p>

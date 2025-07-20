@@ -60,17 +60,17 @@ class InvitationController extends Controller
         $filePath = 'data/messages.json';
 
         try {
+            $messages = [];
+
             if (Storage::disk('local')->exists($filePath)) {
                 $content = Storage::disk('local')->get($filePath);
-                $messages = json_decode($content, true);
-                if ($messages === null || !is_array($messages)) {
-                    $messages = [];
+                $decoded = json_decode($content, true);
+                if (is_array($messages)) {
+                    $messages = $decoded;
                 }
-            } else {
-                $messages = [];
             }
 
-            $messages[] = $newMessage;
+            array_unshift($messages, $newMessage);
 
             Storage::disk('local')->put($filePath, json_encode($messages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 
