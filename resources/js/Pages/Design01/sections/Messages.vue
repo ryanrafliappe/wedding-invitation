@@ -1,11 +1,16 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useMessagesStore } from '@/Stores/messagesStore';
 
 const props = defineProps({
     messages: Array
 })
 
-const localMessages = ref([...props.messages ?? []]);
+const messagesStore = useMessagesStore();
+
+if (props.messages?.length) {
+    messagesStore.messages = [...props.messages];
+}
 
 const name = ref('');
 const message = ref('');
@@ -24,7 +29,7 @@ const submitForm = async () => {
     feedbackMessage.value = '';
 
     try {
-        const response = await fetch('/store', {
+        const response = await fetch('/api/store', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +53,8 @@ const submitForm = async () => {
             message: message.value,
             timestamp: new Date().toISOString()
         }
-        localMessages.value.unshift(newMessage);
+
+        messagesStore.addMessage(newMessage);
 
         name.value = '';
         message.value = '';
@@ -61,6 +67,10 @@ const submitForm = async () => {
         submitting.value = false;
     }
 }
+
+onMounted(() => {
+    messagesStore.fetchMessages();
+})
 </script>
 
 <template>
@@ -91,9 +101,9 @@ const submitForm = async () => {
             </button>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="messages" class="mt-8 overflow-y-scroll rounded-lg  h-96 bg-gray-50">
-            <div v-if="localMessages.length > 0">
-                <div v-for="(message, index) in localMessages" :key="index" class="p-4 mb-4 border-b border-gray-200">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="messages" class="mt-8 overflow-y-scroll rounded-lg h-96 bg-gray-50">
+            <div v-if="messagesStore.messages.length > 0">
+                <div v-for="(message, index) in messagesStore.messages" :key="index" class="p-4 mb-4 border-b border-gray-200">
                     <p class="text-sm text-gray-600">{{ message.sender }}</p>
                     <p class="text-lg text-gray-800">{{ message.message }}</p>
                 </div>

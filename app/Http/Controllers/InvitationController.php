@@ -79,4 +79,16 @@ class InvitationController extends Controller
             return response()->json(['message' => 'Pesan gagal dikirim!', 'error' => $e->getMessage()], 500);
         }
     }
+
+    public function getMessages(): JsonResponse
+    {
+        $path = Storage::disk('local')->path('data/messages.json');
+
+        if (!file_exists($path)) {
+            return response()->json([]);
+        }
+
+        $data = json_decode(file_get_contents($path), true);
+        return response()->json($data ?: []);
+    }
 }
