@@ -28,6 +28,11 @@ class InvitationController extends Controller
         ]);
     }
 
+    public function generateLink(Request $request)
+    {
+        return Inertia::render('Design01/GenerateLink');
+    }
+
     public function getLoveStory(): JsonResponse
     {
         $json = Storage::disk('local')->get('data/love-story.json');
